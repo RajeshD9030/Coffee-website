@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desine coffee shop website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://media.istockphoto.com/id/517518956/photo/traditional-coffee-cup-with-heart-shaped-steam-on-rustic-wood.jpg?s=612x612&w=0&k=20&c=-RppKSHraKmOsakkoEirGtOfB96uOifD2I55Ce1pc-8=);
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+        }
+        .logo img{
+            width: 78px;
+            border-radius: 10px;
+            margin-top: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .links{
+            margin-right: 200px;
+        }
+        .links ul{
+            display: flex;
+        }
+        .links ul li{
+            list-style: none;
+        }
+        .links ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px;
+            text-transform: capitalize;
+            font-style: italic;
+        }
+        .links ul li a:hover{
+            color:#fb38de;
+            transition: .3s;
+        }   
+        span{
+            color: rgb(237, 9, 218);
+        }
+        .content{
+            position: absolute;
+            top: 180px;
+            left: 20px;
+            color: white;
+        }
+        .content h1{
+            font-size: 90px;
+            font-weight: bold;
+            font-style: italic;
+            color: rgb(218, 243, 180);
+        }
+        .content p{
+            font-size: 40px;
+            padding-top: 10px;
+            font-style: oblique;
+            color: greenyellow;
+        }
+        .shopbtn{
+            height: 50px;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+            margin-left: 200px;
+            background-color: rgb(67, 20, 220);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .shopbtn:hover{
+            background-color: rgb(68, 116, 2);
+            transform: scale(1.1);
+        }
+         h1{
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            color:rgb(45, 3, 3);
+        }
+        .about .para{
+            width: 100%;
+            height: 70vh;
+            background-color: rgb(13, 26, 27);
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        .para img{
+            width: 595px;
+            border-radius: 10px;
+        }
+        .head{
+            position: absolute;
+            top: 740px;
+            left: 640px;
+        }
+        .head h3{
+            font-size: 35px;
+            color: rgb(165, 200, 62);
+            font-weight: bold;
+        }
+        .head p{
+            font-size: 15px;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-style: italic;
+            color: rgb(243, 241, 238);
+        }
+        .learnbtn{
+            width: 150px;
+            height: 35px;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(58, 137, 137);
+            color: white;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .learnbtn:hover{
+            transform: scale(1.1);
+            background-color: rgb(192, 16, 157);
+        }
+        .card{
+            width: 100%;
+            height: 120vh;
+            background-color:rgb(26, 35, 35);
+            padding-left: 20px;
+            padding-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card1{
+            width: 280px;
+            height: 350px;
+            background-color: burlywood;
+            border-radius: 20px;
+            text-align: center;
+            margin-left: 20px;   
+        }
+        .card1 img{
+            width: 280px;
+            border-radius: 10px;
+        }
+        .card1 h3{
+            margin-top: 8px;
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(35, 15, 50);
+        }
+        .card1 p{
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-style: italic;
+            color: rgb(30, 46, 28);
+        }
+        .viewbtn{
+            width: 150px;
+            height: 35px;
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(35, 239, 28);
+            color: white;
+            cursor: pointer; 
+            transition: 1s;
+        }
+        .viewbtn:hover{
+            background-color: rgb(118, 28, 115);
+            transform: scale(1.1);
+        }
+        .pro{
+            width: 100%;
+            height: 158vh;
+            background-color:rgb(26, 35, 35);
+            padding-top: 20px;
+            padding-left: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .prodo{
+            width: 400px;
+            height: 73vh;
+            background-color: burlywood;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
+        .prodo img{
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .prodo h2{
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: rgb(46, 4, 130);
+        }
+        .prodo p{
+            font-size: 14.3px;
+            font-weight: 600;
+            margin-top: 7px;
+            font-style: italic;
+        }
+        .gall{
+            width: 100%;
+            height: 155vh;
+            background-color:rgb(26, 35, 35);
+        }
+        .gall img{
+            width: 400px;
+            height: 300px;
+            margin-top: 20px;
+            margin-left: 12px;
+            border-radius: 10px;
+        }
+        .gall img:hover{
+            transform: rotate(15deg) scale(0.7);
+            transition: 1s;
+            box-shadow: 0px 0px 20px rgba(194, 78, 6, 0.874);
+            cursor: pointer;
+        }
+        .cont{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(19, 28, 29);
+        }
+        .forms{
+            width: 400px;
+            height: 300px;
+            background-color: burlywood;
+        }
+        .cont{
+            width: 100%;
+            height: 60vh;
+            background-color: rgb(19, 28, 29);
+            padding-top: 30px;
+            padding-left: 500px;
+        }
+        .cont form{
+            width: 350px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .form label{
+            font-size: 25px;
+            color: antiquewhite;
+            font-weight: bold;
+            padding-left: 20px;
+        }
+        .form input{
+            padding: 5px;
+            width: 300px;
+            margin-left: 20px;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .msg{
+            width: 300px;
+            height: 100px;
+            border: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .sendbtn{
+            width: 100px;
+            padding: 7px;
+            margin-left: 120px;
+            background-color: rgb(207, 70, 189);
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sendbtn:hover{
+            background-color: rgb(102, 234, 8);
+        }
+        .icon{
+            position: absolute;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            display: none;
+
+        }
+        @media(max-width:700px){
+            .links{
+                display: none;
+                width: 100%;
+            }
+            .icon{
+                display: block;
+            }
+            .navbar{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .links ul{
+                flex-direction: column;
+                background-color: darkslategray;
+                width: 100%;
+            }
+            .links ul li{
+                text-align: center;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .active{
+                display: flex;
+            }
+        } 
+        .popup{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0,0.9);
+            display: none;
+        }
+        .popup span{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 40px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .popup img{
+            position: absolute;
+            top: 150px;
+            left: 370px;
+            border-radius: 10px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <i class="fa-solid fa-bars icon"></i>
+            <div class="logo">
+                <img src="https://media.istockphoto.com/id/685446280/photo/wooden-symbol-with-coffee-beans.webp?b=1&s=170667a&w=0&k=20&c=7r-3VgV6wX8IBcd1xogwYYUCGQ2-7t-_rowNq6C0ILk=" alt="" >
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <script>
+                let icon = document.querySelector(".icon")
+                let menu = document.querySelector(".links")
+                icon.onclick=function(){
+                    menu.classList.toggle("active")
+                }
+            </script>
+        </div>
+        <div class="content">
+            <h1>Good <span>Coffee</span> will always<br>Find the audience</h1>
+            <p>we provide a variety of uniques and best coffees</p>
+            <button class="shopbtn">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="about" id="about">
+        <h1>About us</h1>
+        <div class="para">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wxHWnDEpo3HrpAI-g7_PJNWRrxQsJEQ1Ew&usqp=CAU" alt="">
+            <div class="head">
+                <h3>What Makes Our coffee special?</h3><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti itaque dignissimos, ratione fuga perferendis assumenda facilis rerum cupiditate odio, quibusdam dicta nisi saepe veritatis blanditiis repellat obcaecati  <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aliquid ratione tempore, reiciendis omnis delectus facere molestias nulla perferendis consequatur ad saepe deleniti quibusdam aut adipisci magni corporis ullam reprehenderit dolore sint eveniet ut iusto. Labore <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ex accusantium possimus nemo corporis quo ullam voluptatibus assumenda deserunt, fugiat impedit similique sit, inventore, incidunt ipsum totam labore maiores aut? <br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut cum odit veniam. Numquam provident nesciunt officiis quae eum cumque labore.</p>
+                <button class="learnbtn">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+        <h1>Our Menu</h1>
+        <div class="card">
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/1358177437/photo/strong-coffee-from-southern-brazil.jpg?s=612x612&w=0&k=20&c=30SNXvNDcDVAe5GP1pIgvZpJgiwEg_5gKwyYqRy5WYM=" alt="">
+                <h3>Black Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/1629144084/photo/multilayer-coffee-latte-in-glass-cup-on-wooden-table.jpg?s=612x612&w=0&k=20&c=DH6lVyee22xC-1xyBUOJ0QG3AtSXIupOJibPt_cRl6k=" alt="">
+                <h3>Cold Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/1426308217/photo/south-indian-filter-coffee-served-in-a-traditional-tumbler-or-cup-over-roasted-raw-beans.jpg?s=612x612&w=0&k=20&c=JQpq9GxepCN-UmgZC_U6RjWZ2GDwQPyvpHGOOqWwpoo=" alt="">
+                <h3>Hot Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/610556054/photo/caramel-coffee-latte.jpg?s=612x612&w=0&k=20&c=ZvrHOKACSGH9dXCb7fZdWXCm6E8xOh3OO4Oh0wT6_Co=" alt="">
+                <h3>Chocolate Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div> 
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/476442227/photo/nutmeg-on-cappuccino-close-up.jpg?s=612x612&w=0&k=20&c=LdeGw24W94IvOAk3TbiIuvchQQbbCqR48UQhZ2__07s=" alt="">
+                <h3>Miik Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div> 
+            <div class="card1">
+                <img src="https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fHZlbm5lbGElMjBjb2ZmZWV8ZW58MHx8MHx8fDA%3D" alt="">
+                <h3>Caramol Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div> 
+            <div class="card1">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmluZWVsYSUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                <h3>Vineela Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="card1">
+                <img src="https://media.istockphoto.com/id/115594752/photo/grains-and-a-cup-from-coffee-the-top-vie.webp?b=1&s=170667a&w=0&k=20&c=zF7potjSvZSoRC3nY2gybO2iUJ7cCUtxS_oHGbMjIms=" alt=""  height="188px">
+                <h3> Love Coffee</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="viewbtn">View More</button>
+            </div>  
+        </div>
+    </div>
+    <div class="product" id="product">
+        <h1>Our Product</h1>
+        <div class="pro">
+            <div class="prodo">
+                <img src="https://thecoffeestore.co.nz/cdn/shop/products/Exotic_1kg_1000x1000.jpg?v=1622159344" width="300px">
+                <h2>Black Coffee</h2>
+                <p>Black coffee is simply coffee that is normally brewed without the addition of additives such as sugar,milk, cream, or added flavors.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="prodo">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/350385292/HT/QS/LS/3122741/instant-ice-coffee-250x250.jpg"  width="300px">
+                <h2>Cold Coffee</h2>
+                <p>Cold brew usually contains around 200 mg of caffeine per 16 ounces (473 mL). water temperature, grind size, and brewing time.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="prodo">
+                <img src="https://www.atlantisplus.com/wp-content/uploads/2022/04/Amazon-Premium-coffee-min.jpg" width="300px">
+                <h2>Hot Coffee</h2>
+                <p>Hot coffee is prepared from roasted beans that have been ground up. Most at home or at work with pour over or drip coffee,</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="prodo">
+                <img src="https://theteaplanet.com/cdn/shop/products/chocolate_1200x1200_crop_center.jpg?v=1664512089" width="300px">
+                <h2>Chocolate Coffee</h2>
+                <p>Essentially, 'mocha' means a type of coffee that is made from a specific coffee bean originally only grown in Mocha, Yemen.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="prodo">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/9/DT/KB/BY/825957/500-gm-amazon-beverage-whitener-low-sugar-500x500.jpg" width="300px">
+                <h2>Milk Coffee</h2>
+                <p>Milk can help balance out the acidic pH of coffee, which will reduce the acidity and pain that it may cause.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+            <div class="prodo">
+                <img src="https://abuauf.com/Content/Products/6223006318410.jpg" width="300px">
+                <h2>Caramol Coffee</h2>
+                <p>Ghirardelli is the best caramel sauce for coffee. It's thick and buttery, but still thin enough to be squirtable.</p>
+                <button class="viewbtn">View More</button>
+            </div>
+        </div>
+    </div>
+    <div class="gallery" id="gallery">
+        <h1>Our Gallery</h1>
+        <div class="gall">
+            <img src="https://media.istockphoto.com/id/880720550/photo/coffee-cup-coffee-beans.jpg?s=612x612&w=0&k=20&c=Hys1kwquSclobkzG_vUpPg2k9p2xzAsVY8-YaxzstBo=" alt="">
+            <img src="https://media.istockphoto.com/id/923370822/photo/espresso-machine.jpg?s=612x612&w=0&k=20&c=2UomaIgsloq131KlAa3M4mYWLa3RyCeEN3AkCOGpPjM=" alt="">
+            <img src="https://media.istockphoto.com/id/173655712/photo/coffee-machine-and-coffee-beans.jpg?s=612x612&w=0&k=20&c=TBOkzSgGzZIqtT0TsSJYIUKxRWZlCp0Zsl-boGN8aWM=" alt="">
+            <img src="https://media.istockphoto.com/id/1400194993/photo/cappuccino-art.jpg?s=612x612&w=0&k=20&c=_nYOcyQ15cYEeUYgUzkC5qG946nkCwU06NiWKt1s8SE=" alt="">
+            <img src="https://media.istockphoto.com/id/1003743970/photo/happy-waiter-opening-on-the-doors-at-a-cafe.jpg?s=612x612&w=0&k=20&c=iplMvATlv3nfMDxgZnR3ZqriRwjXxReszCsKo9s7gdE=" alt="">
+            <img src="https://media.istockphoto.com/id/1412162049/photo/barista-making-coffee-in-bakery-cafe.jpg?s=612x612&w=0&k=20&c=FgLFY4WKleutcNK46AXeyVaiPN_WKeneEbbB9e46TPk=" alt="">
+            <img src="https://plus.unsplash.com/premium_photo-1673637380658-4144fd3fa160?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+            <img src="https://media.istockphoto.com/id/1470141121/photo/white-coffee-machine-on-counter-with-coffee-menu-on-wooden-shelf-background-in-coffee-shop.jpg?s=612x612&w=0&k=20&c=D6q5DbY2chPmkA3dX-H02cSBRoqcOigcP6sa3cI8Lck=" alt="">
+            <img src="https://media.istockphoto.com/id/115984431/photo/coffee.jpg?s=612x612&w=0&k=20&c=lhz8Vd5TRvGDsyhRRRV7A7bVKecAU7Ocss7cuqa38Hw=" alt="">
+        </div>
+        <div class="popup">
+            <img src="https://media.istockphoto.com/id/880720550/photo/coffee-cup-coffee-beans.jpg?s=612x612&w=0&k=20&c=Hys1kwquSclobkzG_vUpPg2k9p2xzAsVY8-YaxzstBo=" alt="">
+            <span>&CircleTimes;</span>
+        </div>
+        <script>
+             let images = document.querySelectorAll(".gallery img")
+             let popup = document.querySelector(".popup")
+             let popupImg = document.querySelector(".popup img")
+             let close = document.querySelector(".popup span")
+             for(img of images){
+            img.onclick = function(){
+                popup.style.display="block"
+                popupImg.src = this.getAttribute("src")
+            }
+        }
+        close.onclick = function(){
+            popup.style.display="none"
+        }
+        </script>
+    </div>
+    <div class="contact" id="contact">
+        <h1>Contact Us</h1>
+        <div class="cont">
+            <form action="" class="form">
+                <label for="">Name:</label>z
+                <input type="text" name="name" placeholder="Enter Your Name">
+                <label for="">Email:</label>
+                <input type="email" placeholder="Enter Your Email">
+                <label for="">Message:</label>
+                <textarea name="msg" class="msg" cols="30" rows="10" placeholder="Enter Your Message"></textarea> 
+                <button class="sendbtn">SEND</button>             
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
